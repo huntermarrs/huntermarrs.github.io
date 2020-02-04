@@ -1,0 +1,41 @@
+
+body {
+  background-color: white;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+
+img {
+border-radius: 12px;
+width: 25%;
+height: auto;
+object-fit: contain;
+margin: 5px;
+}
+
+.headcontainer {
+    width: 100vw;
+    z-index: 1;
+    position: relative;
+    overflow: scroll;
+  margin: 0 auto;
+  display: inline-flex;
+}
+.facecontainer {
+    width: 100vw;
+    position: relative;
+    top: -350px;
+    overflow: scroll;
+  margin: 0 auto;
+  display: inline-flex;
+}
+.scroll {
+  background-color: none;
+  overflow: scroll;
+  white-space: nowrap;
+}
+  .scroll::-webkit-scrollbar {
+      display: none;
+
+}
