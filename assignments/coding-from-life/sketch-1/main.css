@@ -1,0 +1,99 @@
+/*
+  Coding from Life – Sketch 1: fixed layout
+
+  For sketch 1 you'll be positioning elements relative to an element with a fixed
+  width and height. For this sketch you can position elements by using pixel values.
+*/
+
+body {
+  background-color: black;
+}
+
+.frame {
+  width: 1000px;
+  height: 600px;
+  background: white;
+  margin: 30px auto;
+  position: relative;
+}
+.table {
+    position: relative;
+    width: 800px;
+    height: 275px;
+    background: #b7a3ba;
+    transform: skew(-24deg, 5deg);
+top: -105px;
+    left: 91px;
+}
+.book-up {
+    position: relative;
+        top: 109px;
+        left: 130px;
+        border-bottom: 132px solid #dfdfdf;
+        border-left: 46px solid transparent;
+        border-right: 25px solid transparent;
+        height: 0px;
+        width: 147px;
+        transform: rotate(-90deg);
+        z-index: 1;
+}
+.vase {
+    position: relative;
+        top: -42px;
+        left: 470px;
+        display: block;
+        width: 126px;
+        height: 150px;
+        background-color: #cfcfcf;
+        border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+        border: black;
+        z-index: 1;
+  }
+.book-top {
+    position: relative;
+        top: 123px;
+        left: 404px;
+        width: 234px;
+        height: 22px;
+        background: #2b2b2b;
+        transform: skew(5deg, 5deg);
+        z-index: 1;
+}
+.flower1 {
+    position: relative;
+    top: -24px;
+    left: 35px;
+    width: 10px;
+    height: 50px;
+    background: green;
+    transform: rotate(-33deg);
+    z-index: 2;
+}
+.flower2 {
+    position: relative;
+        top: -86px;
+        left: 53px;
+        width: 10px;
+        height: 56px;
+        background: green;
+        transform: rotate(-8deg);
+}
+.flower3 {
+    position: relative;
+        top: -151px;
+        left: 66px;
+        width: 10px;
+        height: 66px;
+        background: green;
+        transform: rotate(10deg);
+}
+.flower4 {
+    position: relative;
+    top: -206px;
+    left: 79px;
+    width: 10px;
+    height: 59px;
+    background: green;
+    transform: rotate(31deg);
+}
+/* Your CSS goes here */
