@@ -5,18 +5,139 @@
   means you'll need to use percentages when positioning and sizingelements within
   your frame.
 */
-
-
 body {
-  background-color: black;
+    background-color: black;
 }
 
 .frame {
-  width: 95vw;
-  height: 57vw;
-  background: white;
-  margin: 2.5vw auto;
-  position: relative;
+    width: 95vw;
+    height: 57vw;
+    background: white;
+    margin: 2.5vw auto;
+    position: relative;
 }
 
+.book-up {
+    position: absolute;
+    top: 14vw;
+    left: 11vw;
+    border-bottom: 13vw solid #dfdfdf;
+    border-left: 2vw solid transparent;
+    border-right: 4vw;
+    height: 0px;
+    width: 18vw;
+    transform: rotate(-90deg);
+    z-index: 1;
+}
+
+.vase {
+    position: absolute;
+    top: 7vw;
+    left: 51vw;
+    display: block;
+    width: 14vw;
+    height: 17vw;
+    background-color: #cfcfcf;
+    border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
+    border: black;
+    z-index: 1;
+}
+
+.book-topspine {
+    position: absolute;
+    top: 31vw;
+    left: 40vw;
+    width: 25vw;
+    height: 2vw;
+    background: #2b2b2b;
+    transform: skew(0deg, -3deg);
+    z-index: 1;
+}
+
+.book-topcover {
+    position: absolute;
+    top: 20vw;
+    left: 42vw;
+    width: 25vw;
+    height: 11vw;
+    background: #363434;
+    transform: skew(-20deg, -3deg);
+    z-index: 1;
+}
+
+.book-topside {
+    position: absolute;
+    top: 24.5vw;
+    left: 65vw;
+    width: 3.9vw;
+    height: 3vw;
+    background: #c9c9c9;
+    transform: skew(-1deg, 110deg);
+    z-index: 1;
+}
+
+.book-bottomspine {
+    position: absolute;
+    top: 32vw;
+    left: 45vw;
+    width: 20vw;
+    height: 6vw;
+    background: #dadada;
+    transform: skew(0deg, -3deg);
+    z-index: 1;
+}
+
+.book-bottomside {
+    position: absolute;
+    top: 25vw;
+    left: 65vw;
+    width: 3.9vw;
+    height: 7vw;
+    background: #077369;
+    transform: skew(-1deg, 110deg);
+    z-index: 1;
+}
+
+.camerabody {
+    position: absolute;
+    top: 23vw;
+    left: 72vw;
+    width: 4.9vw;
+    height: 10vw;
+    background: #1d1d1d;
+    transform: skew(0deg, 120deg);
+    z-index: 1;
+}
+
+.cameraside {
+    position: absolute;
+    top: 27vw;
+    left: 69.2vw;
+    width: 2.9vw;
+    height: 10vw;
+    background: #1d1d1d;
+    z-index: 1;
+    transform: skew(0deg, 7deg);
+}
+
+.cameratop {
+    position: absolute;
+    top: 19vw;
+    left: 71.2vw;
+    width: 3.5vw;
+    height: 8vw;
+    background: #1d1d1d;
+    z-index: 1;
+    transform: skew(-30deg, 7deg);
+}
+
+.table {
+    position: absolute;
+    width: 74vw;
+    height: 26vw;
+    background: #b7a3ba;
+    transform: skew(-24deg, 5deg);
+    top: 23vw;
+    left: 10vw;
+}
 /* Your CSS goes here */
