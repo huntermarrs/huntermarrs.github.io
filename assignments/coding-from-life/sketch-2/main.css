@@ -29,7 +29,92 @@ body {
     transform: rotate(-90deg);
     z-index: 1;
 }
-
+.catbody {
+        position: absolute;
+        top: 21vw;
+        left: 30vw;
+        display: block;
+        width: 12vw;
+        height: 14vw;
+        background-color: #ebe7d1;
+        border-radius: 40% 40% 40% 40% / 60% 60% 40% 40%;
+        border: black;
+        z-index: 1;
+}
+.cathead {
+    position: absolute;
+    top: 16vw;
+    left: 31.5vw;
+    display: block;
+    width: 9vw;
+    height: 8vw;
+    background-color: #ebe7d1;
+    border-radius: 60% 60% 40% 40% / 60% 60% 40% 40%;
+    border: black;
+    z-index: 1;
+}
+.catear1 {
+    position: absolute;
+    top: 15vw;
+    left: 31.5vw;
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    background-color: red;
+    border-radius: 35% 80% 20% 20% / 60% 60% 40% 40%;
+    border: black;
+    border-style: solid;
+    border-width: thick;
+    border-color: #ebe7d1;
+}
+.catear2 {
+    position: absolute;
+    top: 15vw;
+    left: 36.5vw;
+    display: block;
+    width: 3vw;
+    height: 3vw;
+    background-color: red;
+    border-radius: 80% 35% 20% 20% / 60% 60% 40% 40%;
+    border: black;
+    border-style: solid;
+    border-width: thick;
+    border-color: #ebe7d1;
+}
+.cateye1 {
+    position: absolute;
+    top: 18vw;
+left: 35.5vw;
+    display: block;
+    width: 2vw;
+    height: .8vw;
+    background-color: black;
+    border-radius: 35% 35% 0% 25% / 60% 60% 40% 40%;
+    z-index: 1;
+}
+.cateye2 {
+    position: absolute;
+    top: 18vw;
+    left: 32.5vw;
+    display: block;
+    width: 2vw;
+    height: .8vw;
+    background-color: black;
+    border-radius: 35% 35% 25% 0% / 60% 60% 40% 40%;
+    z-index: 1;
+}
+.catarm {
+    position: absolute;
+        top: 19vw;
+        left: 40.5vw;
+        display: block;
+        width: 3vw;
+        height: 8vw;
+        background-color: #ebe7d1;
+        border-radius: 40% 40% 40% 40% / 60% 60% 40% 40%;
+        border: black;
+        z-index: 1;
+}
 .vase {
     position: absolute;
     top: 7vw;
@@ -40,9 +125,122 @@ body {
     background-color: #cfcfcf;
     border-radius: 50% 50% 40% 40% / 60% 60% 40% 40%;
     border: black;
-    z-index: 1;
+    z-index: 4;
 }
-
+.stem1 {
+    position: relative;
+    top: -2vw;
+    left: 3vw;
+width: 1vw;
+height: 5vw;
+background: green;
+transform: rotate(-33deg);
+z-index: -1;
+}
+.stem2 {
+    position: absolute;
+    top: -3vw;
+        left: 5vw;
+width: 1vw;
+height: 5vw;
+background: green;
+transform: rotate(-8deg);
+z-index: 2;
+}
+.stem3 {
+    position: absolute;
+    top: -2vw;
+    left: 7vw;
+width: 1vw;
+height: 5vw;
+background: green;
+    transform: rotate(10deg);
+}
+.stem4 {
+    position: absolute;
+    top: -2vw;
+    left: 9vw;
+width: 1vw;
+height: 5vw;
+background: green;
+        transform: rotate(31deg);
+}
+.flower1{
+    width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-bottom: 2vw solid red;
+        position: relative;
+        top: -11vw;
+        left: 1vw;
+        }
+        .flower1:after {
+            content: '';
+        position: absolute;
+        left: -1vw;
+        top: 2vw;
+        width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-top: 3vw solid red;
+}
+.flower2{
+    width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-bottom: 2vw solid red;
+        position: relative;
+        top: -15vw;
+        left: 4vw;
+        }
+        .flower2:after {
+            content: '';
+        position: absolute;
+        left: -1vw;
+        top: 2vw;
+        width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-top: 3vw solid red;
+}
+.flower3 {
+    width: 0;
+    height: 0;
+    border: 1vw solid transparent;
+    border-bottom: 2vw solid red;
+    position: relative;
+    top: -17vw;
+    left: 7vw;
+        }
+        .flower3:after {
+            content: '';
+        position: absolute;
+        left: -1vw;
+        top: 2vw;
+        width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-top: 3vw solid red;
+}
+.flower4 {
+    width: 0;
+    height: 0;
+    border: 1vw solid transparent;
+    border-bottom: 2vw solid red;
+    position: relative;
+    top: -19vw;
+    left: 10vw;
+        }
+        .flower4:after {
+            content: '';
+        position: absolute;
+        left: -1vw;
+        top: 2vw;
+        width: 0;
+        height: 0;
+        border: 1vw solid transparent;
+        border-top: 3vw solid red;
+}
 .book-topspine {
     position: absolute;
     top: 31vw;
@@ -82,7 +280,7 @@ body {
     left: 45vw;
     width: 20vw;
     height: 6vw;
-    background: #dadada;
+    background: #8a8a8a;
     transform: skew(0deg, -3deg);
     z-index: 1;
 }
@@ -135,7 +333,7 @@ body {
     position: absolute;
     width: 74vw;
     height: 26vw;
-    background: #b7a3ba;
+    background: #d7d7d7;
     transform: skew(-24deg, 5deg);
     top: 23vw;
     left: 10vw;
