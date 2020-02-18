@@ -1,6 +1,7 @@
 body {
     background-color: blue;
     margin: 0;
+    overflow-y: hidden;
 }
 a {
     color: #c2c2c2;
