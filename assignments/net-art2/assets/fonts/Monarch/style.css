@@ -1,0 +1,9 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "Monarch";
+
+  src: url("./fonts/Monarch.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/Monarch.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
