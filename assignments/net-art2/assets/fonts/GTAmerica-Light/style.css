@@ -1,0 +1,9 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "GTAmerica-Light";
+
+  src: url("./fonts/GT-America-Light.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/GT-America-Light.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}

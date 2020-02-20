@@ -1,0 +1,9 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "GTAlpina-RegularItalic";
+
+  src: url("./fonts/GT-Alpina-Regular-Italic.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/GT-Alpina-Regular-Italic.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
