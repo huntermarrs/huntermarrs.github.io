@@ -1,0 +1,225 @@
+body {
+    background-color: white;
+    margin: 10px;
+}
+* {
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: "ATApoc-Dark";
+
+  src: url("../fonts/ATApoc-Dark/fonts/ATApocDark.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/ATApoc-Dark/fonts/ATApocDark.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "VisualTrial-Regular";
+
+  src: url("../fonts/VisualTrial-Regular/fonts/Visualtrial.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/VisualTrial-Regular/fonts/Visualtrial.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "ATApoc-Revelations";
+
+  src: url("../fonts/ATApoc-Revelations/fonts/ATApocRevelations.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/ATApoc-Revelations/fonts/ATApocRevelations.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+.bgimg {
+        height: auto;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        overflow: show;
+}
+
+img {
+    width: 100vw;
+    height: auto;
+    overflow: hidden;
+    animation: flash linear .5s infinite;
+
+}
+
+.container {
+    margin-top: -3vw;
+min-height:29vh;
+ display: flex;
+ flex-direction: column;
+ overflow: hidden;
+}
+.row {
+  display: flex;
+  margin-top: 1vw;
+}
+.row1 {
+    display: flex;
+    margin-top: 1vw;
+}
+.col {
+  flex: 1;
+ padding-left: 10px;
+ padding-right: 10px;
+}
+.col1 {
+    margin: 3vw;
+    margin-top: 1vw;
+
+}
+.col2 {
+}
+.col3 {
+    margin: 3vw;
+    width: 100%;
+    margin-bottom: -3vw;
+}
+.event-title {
+    margin: auto;
+    font-size: 15vw;
+    font-family: "VisualTrial-Regular";
+}
+.event-title:hover {
+    color: #f4f23f;
+}
+.event-title2 {
+    justify-content: center;
+        margin-top: -15vw;
+        font-size: 15vw;
+        font-family: "VisualTrial-Regular";
+}
+.event-title2:hover {
+
+    color: #a4dd65;
+}
+a:link {
+    text-decoration: none;
+}
+.line {
+    width: 100vw;
+display: flex;
+}
+.performers {
+font-size: 4vw;
+animation: 1s infinite beatHeart;
+font-family: "ATApoc-Dark";
+}
+.date {
+font-size: 3vw;
+font-family: "ATApoc-Revelations";
+}
+.location {
+font-size: 3vw;
+font-family: "ATApoc-Revelations";
+}
+.align-center {
+    text-align: center;
+}
+.align-right {
+    text-align: right;
+}
+
+@keyframes beatHeart {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  40% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes jello {
+  /* 11.1% {
+    transform: none
+  } */
+  22.2% {
+    transform: skewX(-12.5deg) skewY(-12.5deg)
+  }
+  33.3% {
+    transform: skewX(6.25deg) skewY(6.25deg)
+  }
+  44.4% {
+    transform: skewX(-3.125deg) skewY(-3.125deg)
+  }
+  55.5% {
+    transform: skewX(1.5625deg) skewY(1.5625deg)
+  }
+  66.6% {
+    transform: skewX(-0.78125deg) skewY(-0.78125deg)
+  }
+  77.7% {
+    transform: skewX(0.390625deg) skewY(0.390625deg)
+  }
+  88.8% {
+    transform: skewX(-0.1953125deg) skewY(-0.1953125deg)
+  }
+  /* 100% {
+    transform: none
+  } */
+}
+@keyframes flash {
+	0% { opacity: 1; }
+	50% { opacity: .1; }
+	100% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  body {
+    max-height: 100vh;
+}
+img {
+    transform: rotate(90deg);
+    width: 200vw;
+    height: 200vw;
+}
+.container {
+    margin-bottom: -15vw;
+}
+
+.event-title {
+    margin: auto;
+    font-size: 15vw;
+    font-family: "VisualTrial-Regular";
+
+}
+.event-title2 {
+        margin-top: -35vw;
+        font-size: 14.5vw;
+        font-family: "VisualTrial-Regular";
+}
+.performers {
+font-size: 8vw;
+}
+.col3 {
+    display: flex;
+    flex-direction: row;
+}
+
+.date{
+
+    width: 100%;
+    font-size: 23vw;
+}
+.location {
+
+    text-align: center;
+    width: 100%;
+    font-size: 8vw;
+}
+.line {
+    display: inline-flex;
+    text-align: justify;
+}
+}
