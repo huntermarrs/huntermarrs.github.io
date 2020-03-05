@@ -1,0 +1,314 @@
+body {
+    background-color: black;
+    margin: 2vw;
+    animation: fadeInAnimation ease 5s animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.spotlight {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: radial-gradient(circle,
+            transparent 160px,
+            rgba(0, 0, 0, 0.85) 200px);
+}
+
+@font-face {
+    font-family: "ATApoc-Revelations";
+    src: url("../fonts/ATApoc-Revelations/fonts/ATApocRevelations.woff") format("woff"),
+        /* Modern Browsers */
+        url("../fonts/ATApoc-Revelations/fonts/ATApocRevelations.woff2") format("woff2");
+    /* Modern Browsers */
+    font-weight: normal;
+    font-style: normal;
+}
+
+img {
+    /* source https://codepen.io/codewithJahid/pen/JRPvBj */
+    /* filter: url(filters.svg#grayscale); Firefox 3.5+ */
+    filter: gray;
+    /* IE5+ */
+    -webkit-filter: grayscale(1);
+    /* Webkit Nightlies & Chrome Canary */
+    -webkit-transition: all .8s ease-in-out;
+}
+
+img:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);
+    -webkit-transform: scale(1.05);
+}
+
+.header-container {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 12vw;
+    text-align: center;
+    font-family: "ATApoc-Revelations";
+}
+
+.collage-container {
+    height: 120vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.crop-img1 {
+    position: absolute;
+    left: 20vw;
+    top: 100vh;
+}
+
+.collage-img1 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -9vh;
+    left: 7vw;
+    transform: scale(0.85, 0.85);
+}
+
+.crop-img1:hover .collage-img1 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img2 {
+    position: absolute;
+    left: 40vw;
+    top: 116vh;
+}
+
+.collage-img2 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -32vh;
+    left: -17vw;
+    transform: scale(0.75, 0.75);
+}
+
+.crop-img2:hover .collage-img2 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img3 {
+    position: absolute;
+    left: 85vw;
+    top: 140vh;
+}
+
+.collage-img3 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -31vh;
+    left: -48vw;
+    transform: scale(1.5, 1.5);
+}
+
+.crop-img3:hover .collage-img3 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img4 {
+    position: absolute;
+    left: 3vw;
+    top: 145vh;
+}
+
+.collage-img4 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -85vh;
+    left: 12vw;
+    transform: scale(.6, .6);
+}
+
+.crop-img4:hover .collage-img4 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img5 {
+    position: absolute;
+    left: 60vw;
+    top: 160vh;
+}
+
+.collage-img5 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -76vh;
+    left: -37vw;
+    transform: scale(.8, .8);
+}
+
+.crop-img5:hover .collage-img5 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img6 {
+    position: absolute;
+    left: 70vw;
+    top: 110vh;
+}
+
+.collage-img6 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -29vh;
+    left: -45vw;
+    transform: scale(.8, .8);
+}
+
+.crop-img6:hover .collage-img6 {
+    display: block;
+    z-index: 10;
+}
+
+.crop-img7 {
+    position: absolute;
+    left: 32vw;
+    top: 162vh;
+}
+
+.collage-img7 {
+    display: none;
+    z-index: 10;
+    position: absolute;
+    top: -58vh;
+    left: 3vw;
+    transform: scale(1.2, 1.2);
+}
+
+.crop-img7:hover .collage-img7 {
+    display: block;
+    z-index: 10;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+a:hover {
+    text-transform: uppercase;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    padding: 27vw;
+    flex: 1;
+}
+
+.qa-link {
+    color: white;
+    font-family: "ATApoc-Revelations";
+    font-size: 3vw;
+    line-height: 5.1vh;
+    letter-spacing: .1vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.phone-photos {
+    display: none;
+}
+}
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    /* For mobile phones: */
+    img {
+        filter: none;
+    }
+
+    @media (hover: none) {
+        img:hover {}
+    }
+
+    .collage-container {
+        display: none;
+    }
+
+    .crop-img1 {
+        display: none;
+    }
+
+    .crop-img2 {
+        display: none;
+    }
+
+    .crop-img3 {
+        display: none;
+    }
+
+    .crop-img4 {
+        display: none;
+    }
+
+    .crop-img5 {
+        display: none;
+    }
+
+    .crop-img6 {
+        display: none;
+    }
+
+    .crop-img7 {
+        display: none;
+    }
+
+    .phone-photos {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        height: -1vh;
+    }
+
+    .spotlight {
+        display: none;
+    }
+}
+
+@media print {
+    .spotlight {
+        display: none;
+    }
+
+    .header-container {
+        color: black;
+        font-size: 12vw;
+    }
+
+    .qa-link {
+        color: black;
+    }
+}
