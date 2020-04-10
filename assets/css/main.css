@@ -1,0 +1,121 @@
+body {
+    background-color: black;
+    cursor: none;
+}
+h1 {
+    position: relative;
+    top: -120px;
+    font-family: helvetica;
+    font-weight: bolder;
+    font-size: 170px;
+text-transform: uppercase;
+background-image: url('https://media.giphy.com/media/xUA7aKCtqnlAzuIg8M/giphy.gif');
+background-size: 500px 500px;
+background-repeat: repeat;
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+
+#bg {
+    position: absolute;
+    min-height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+h2 {
+    position: relative;
+    top: -260px;
+    font-family: helvetica;
+    font-weight: bolder;
+    font-size: 70px;
+text-transform: uppercase;
+background-image: url('https://media.giphy.com/media/xUA7aKCtqnlAzuIg8M/giphy.gif');
+background-size: 500px 500px;
+background-repeat: repeat;
+background-clip: text;
+-webkit-background-clip: text;
+color: transparent;
+}
+#cursor {
+    width: 300px;
+height: 300px;
+position: absolute;
+border-radius: 50%;
+z-index: 40;
+mix-blend-mode: screen;
+pointer-events: none;
+}
+.circle {
+    background-image: url('http://bestanimations.com/Signs&Shapes/round-sphere-moving-animated-gif-7.gif#.XpCdtAlMYhU.link');
+    background-position-x: center;
+    background-position-y: center;
+    background-size: initial;
+    background-repeat-x: no-repeat;
+    background-repeat-y: no-repeat;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+
+}
+
+.assignments {
+
+}
+.projects {
+}
+.dropbtn1 {
+    position: relative;
+  background-color: white;
+  border-radius: 45px;
+  color: black;
+  padding: 16px;
+  font-size: 50px;
+  border-style: dashed;
+  border-color: #000dff;
+}
+.dropbtn1:hover {
+    background: #000dff;
+    color: white;
+}
+.dropbtn2 {
+     background-color: white;
+    color: black;
+    padding: 16px;
+    font-size: 50px;
+    border-radius: 45px;
+    border-style: dashed;
+    border-color: #000dff;
+}
+.dropbtn2:hover {
+    background: #000dff;
+    color: white;
+}
+.dropdown {
+  position: relative;
+  top: -250px;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: static;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  color: black;
+  padding: 16px 30px;
+  font-size: 20px;
+  line-height: 5px;
+  font-family: helvetica;
+  text-decoration: none;
+  display: block;
+}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown-content a:hover {
+    color: blue;
+    font-size: 25px;
+}

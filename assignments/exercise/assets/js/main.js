@@ -57,6 +57,38 @@ if ( hours > 19 && hours < 21 ) {
 else {
   console.log("it is not between 7 and 9:40");
 }
+
+var weekday = new Array(7);
+weekday[0] = "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+
+var n = weekday [date.getDay()];
+
+if ( n == "Monday") {
+  console.log("first day of week" );
+}
+else if ( n=="Tuesday") {
+  console.log("studio class!");
+}
+else if (n=="Wednesday") {
+  console.log("third day - no class");
+}
+else if ( n=="Thursday") {
+  console.log("fourth day - studio class");
+}
+else if ( n=="Friday") {
+  console.log("fifth day - lab class!");
+}else if ( n=="Saturday") {
+  console.log("drinking time");
+}else if ( n=="Sunday") {
+  console.log("prepare to do it all again");
+}
+
 console.log(restaurantArray);
 console.log(animalsArray);
 console.log(pokemonArray);

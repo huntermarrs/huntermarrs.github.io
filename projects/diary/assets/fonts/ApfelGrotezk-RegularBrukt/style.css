@@ -1,0 +1,9 @@
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "ApfelGrotezk-RegularBrukt";
+
+  src: url("./fonts/ApfelGrotezk-RegularBrukt.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/ApfelGrotezk-RegularBrukt.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
