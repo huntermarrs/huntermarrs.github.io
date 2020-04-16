@@ -1,16 +1,29 @@
 html,
 body {
     margin: 0;
-    /* overflow: hidden; */
-    height: 100%;
+    height: 800px;
 }
-
+* {
+    box-sizing: border-box;
+}
 /* Scale canvas with resize attribute to full size */
 canvas[resize] {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    margin-top: -8vh;
+    margin-left: -1vw;
+    width: 102%;
+    height: 106%;
+    z-index: 1;
 }
+/* font converted using font-converter.net. thank you! */
+@font-face {
+  font-family: "ApfelGrotezk-Regular";
 
+  src: url("../fonts/ApfelGrotezk-Regular/fonts/ApfelGrotezk-Regular.woff") format("woff"), /* Modern Browsers */
+    url("../fonts/ApfelGrotezk-Regular/fonts/ApfelGrotezk-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
 @font-face {
   font-family: "ApfelGrotezk-RegularBrukt";
 
@@ -19,24 +32,42 @@ canvas[resize] {
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: "GTZirkon-Book";
-
-  src: url("../fonts/GTZirkon-Book/fonts/gt-zirkon-book.woff") format("woff"), /* Modern Browsers */
-    url("../fonts/GTZirkon-Book/fonts/gt-zirkon-book.woff2") format("woff2"); /* Modern Browsers */
-  font-weight: normal;
-  font-style: normal;
-}
-.popup {
+.close {
+display: none;
+    position: fixed;
+    z-index: 201;
     color: white;
-    margin: 7vw;
     font-size: 4.5vw;
+    margin-left: 2vw;
     letter-spacing: -.15vw;
     line-height: 5vw;
-    background-color: #5dbe67;
-    font-family: "GTZirkon-Book";
+      font-family: "ApfelGrotezk-Regular";
     -webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: black;
+    -webkit-text-stroke-color: black;
+}
+.close:hover {
+    cursor: pointer;
+}
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    color: #5dbe67;
+    padding: 1vw;
+    margin-left: 1vw;
+    margin-right: 3vw;
+    margin-top: -5vh;
+    font-size: 4.5vw;
+    letter-spacing: normal;
+    line-height: 5vw;
+    background-color: white;
+  font-family: "ApfelGrotezk-Regular";
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    opacity: .9;
+}
+p {
+margin: 1vw;
 }
 .popupcovid {
 color: black;
@@ -44,22 +75,176 @@ color: black;
 
 }
 .title {
-    color: #5dbe67;
-    -webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: black;
-    margin-top: 2vh;
+    position: relative;
+    height: 1vh;
+    width: 100vw;
+    z-index: 99;
+    top: 6vh;
+    color: white;
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+    margin-top: 5vh;
     text-align: center;
     align-items: center;
     font-family: "ApfelGrotezk-RegularBrukt";
     font-size: 20vw;
     line-height: 15vw;
 }
-.imagelist {
+.arrow {
+    position: relative;
+    top: 64vh;
+    height: 1vh;
+    width: 100vw;
+    z-index: 99;
+    color: white;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    margin-top: 0vh;
     text-align: center;
-    margin: 0 auto;
+    align-items: center;
+    font-family: "ApfelGrotezk-RegularBrukt";
+    font-size: 13vw;
+    line-height: 15vw;
+}
+.container {
+    max-width: auto;
+    margin: auto;
+}
+.portfolio .portfolio-items {
+    position: relative;
+top: 95vh;
+    background: white;
+    flex-basis: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.portfolio .portfolio-items .item {
+    flex-basis: calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    margin-bottom: 10px;
+    position: relative;
+}
+.portfolio .portfolio-items .item img {
+    width: 100%;
+    display: block;
+}
+.portfolio .portfolio-items .item .overlay {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 50%;
+      font-family: "ApfelGrotezk-Regular";
+    color: #5dbe67;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: scale(0.5);
+    opacity: 0;
+    transition: all .5s ease;
+}
+.portfolio .portfolio-items .item:hover .overlay {
+    transform: scale(0.5);
+    opacity: .8;
+}
+.portfolio .portfolio-items .item .overlay h2 {
+    font-size: 45px;
+    color: #5dbe67;
+    margin: 30px 0;
+}
+
+/* lightbox */
+.lightbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: zoom-out;
+}
+.lightbox.open{
+    display: flex;
+}
+.lightbox .lightbox-img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 600px;
+    padding: 40px;
+    cursor: pointer;
+}
+.lightbox .lightbox-content {
+    position: relative;
+}
+.lightbox .lightbox-close {
+    position: absolute;
+    z-index: 101;
+    height: 40px;
+    width: 40px;
+    top: 0;
+    color: white;
+    cursor: zoom-out;
+    font-size: 30px;
+}
+.lightbox .lightbox-caption {
+    background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(102,204,102,0.6));
+    color: white;
+      font-family: "ApfelGrotezk-Regular";
+    font-size: 30px;
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    z-index: -1;
+}
+.lightbox .lightbox-controls div {
+    position: absolute;
+    top: 50%;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    justify-content: center;
+    line-height: 40px;
+    font-size: 20px;
+    margin-top: -20px;
+    background-color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .5s ease
+}
+.lightbox .lightbox-controls div:hover {
+background-color: #cdcdcd;
+}
+.lightbox .lightbox-controls div.prev {
+    left: 30px;
+}
+.lightbox .lightbox-controls div.next {
+    right: 30px;
+}
+
+@media(max-width:991px){
+    .portfolio .portfolio-items .item{
+        flex-basis: calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+@media (max-width:575px){
+    .portfolio .portfolio-items .item{
+        flex-basis: calc(100%);
+        max-width: calc(100%);
 
 }
-.imagelist a {
-/* border: 2px solid black; */
-
 }

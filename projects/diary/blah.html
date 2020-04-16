@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <title>GOOD GERMS</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="assets/js/voronoi.js"></script>
+    <script type="text/paperscript" canvas="canvas">
+        var voronoi = new Voronoi();
+        var sites = generateBeeHivePoints(view.size / 200, true);
+        var bbox, diagram;
+        var oldSize = view.size;
+        var spotColor = new Color('#5dbe67');
+        var mousePos = view.center;
+        var selected = false;
+
+        onResize();
+
+        function onMouseDown(event) {
+            sites.push(event.point);
+            renderDiagram();
+        }
+
+        function onMouseMove(event) {
+            mousePos = event.point;
+            if (event.count == 0)
+                sites.push(event.point);
+            sites[sites.length - 1] = event.point;
+            renderDiagram();
+        }
+
+        function renderDiagram() {
+            project.activeLayer.removeChildren();
+            var diagram = voronoi.compute(sites, bbox);
+            if (diagram) {
+                for (var i = 0, l = sites.length; i < l; i++) {
+                    var cell = diagram.cells[sites[i].voronoiId];
+                    if (cell) {
+                        var halfedges = cell.halfedges,
+                            length = halfedges.length;
+                        if (length > 2) {
+                            var points = [];
+                            for (var j = 0; j < length; j++) {
+                                v = halfedges[j].getEndpoint();
+                                points.push(new Point(v));
+                            }
+                            createPath(points, sites[i]);
+                        }
+                    }
+                }
+            }
+        }
+
+        function removeSmallBits(path) {
+            var averageLength = path.length / path.segments.length;
+            var min = path.length / 50;
+            for (var i = path.segments.length - 1; i >= 0; i--) {
+                var segment = path.segments[i];
+                var cur = segment.point;
+                var nextSegment = segment.next;
+                var next = nextSegment.point + nextSegment.handleIn;
+                if (cur.getDistance(next) < min) {
+                    segment.remove();
+                }
+            }
+        }
+
+        function generateBeeHivePoints(size, loose) {
+            var points = [];
+            var col = view.size / size;
+            for (var i = -1; i < size.width + 1; i++) {
+                for (var j = -1; j < size.height + 1; j++) {
+                    var point = new Point(i, j) / new Point(size) * view.size + col / 2;
+                    if (j % 2)
+                        point += new Point(col.width / 2, 0);
+                    if (loose)
+                        point += (col / 4) * Point.random() - col / 4;
+                    points.push(point);
+                }
+            }
+            return points;
+        }
+        function createPath(points, center) {
+            var path = new Path();
+            if (!selected) {
+                path.fillColor = spotColor;
+            } else {
+                path.fullySelected = selected;
+            }
+            path.closed = true;
+
+            for (var i = 0, l = points.length; i < l; i++) {
+                var point = points[i];
+                var next = points[(i + 1) == points.length ? 0 : i + 1];
+                var vector = (next - point) / 2;
+                path.add({
+                    point: point + vector,
+                    handleIn: -vector,
+                    handleOut: vector
+                });
+            }
+            path.scale(0.95);
+            removeSmallBits(path);
+            return path;
+        }
+
+        function onResize() {
+            var margin = 20;
+            bbox = {
+                xl: margin,
+                xr: view.bounds.width - margin,
+                yt: margin,
+                yb: view.bounds.height - margin
+            };
+            for (var i = 0, l = sites.length; i < l; i++) {
+                sites[i] = sites[i] * view.size / oldSize;
+            }
+            oldSize = view.size;
+            renderDiagram();
+        }
+
+        function onKeyDown(event) {
+            if (event.key == 'space') {
+                selected = !selected;
+                renderDiagram();
+            }
+        }
+    </script>
+</head>
+<body>
+    <canvas id="canvas" resize></canvas>
+    <div class="title">
+        GOOD GERMS
+    </div>
+    <div class="arrow">
+        ↓
+    </div>
+    <div class="close">
+        X
+
+        <div class="popup">
+            <p>The <span class="popupcovid">COVID-19 PANDEMIC</span> has instilled fear in a majority of the human population.
+            Currently, germs are the enemy, and the media is saturated with tips on how to get away from them.
+            If you need a break from that, here’s some examples on how germs are used for good - in art.</p>
+        </div>
+        </div>
+        <section class="portfolio">
+            <div class="container">
+                <div class="row">
+                </div>
+                <div class="row">
+                    <div class="portfolio-items">
+                        <div class="item">
+                        <a href="assets/imgs/fullpic/griditem1.jpg"><img src="assets/imgs/thumbnails/thumbnail1.jpg" alt="lemon"></a>
+                        <div class="overlay">
+                            <h2>Bad Fruit</h2>
+                        </div>
+                        </div>
+                        <div class="item">
+                                <a href="assets/imgs/fullpic/griditem2.jpg"><img src="assets/imgs/thumbnails/thumbnail2.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Magical Contamination</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                                <a href="assets/imgs/fullpic/griditem5.jpg"><img src="assets/imgs/thumbnails/thumbnail3.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Palazzo Mold</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                                <a href="assets/imgs/fullpic/griditem4.jpg"><img src="assets/imgs/thumbnails/thumbnail4.png" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>After Effects</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem5.jpg"><img src="assets/imgs/thumbnails/thumbnail5.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Nature Scapes</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem6.jpg"><img src="assets/imgs/thumbnails/thumbnail6.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Polluted Water Popsicles</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem7.jpg"><img src="assets/imgs/thumbnails/thumbnail7.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Microbe Portraits</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem8.jpg"><img src="assets/imgs/thumbnails/thumbnail8.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Mold Garden</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem9.jpg"><img src="assets/imgs/thumbnails/thumbnail9.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Moss Carpet</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem10.jpg"><img src="assets/imgs/thumbnails/thumbnail10.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Endolith Seats</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem11.jpg"><img src="assets/imgs/thumbnails/thumbnail11.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Mushroom Spore Prints</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem12.jpg"><img src="assets/imgs/thumbnails/thumbnail12.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Mold Photography</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem13.jpg"><img src="assets/imgs/thumbnails/thumbnail13.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Microcosm</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem14.jpg"><img src="assets/imgs/thumbnails/thumbnail14.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Mycelium Dress</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem15.jpg"><img src="assets/imgs/thumbnails/thumbnail15.jpg" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Mycotecture</h2>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <a href="assets/imgs/fullpic/griditem16.png"><img src="assets/imgs/thumbnails/thumbnail16.png" alt="lemon"></a>
+                            <div class="overlay">
+                                <h2>Germ Poster</h2>
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+        </section>
+<!-- lightbox -->
+<div class="lightbox">
+    <div class="lightbox-content">
+        <div class="lightbox-close">&times;</div>
+        <img src="" class="lightbox-img" alt="lemon">
+        <div class="lightbox-caption">
+            <span class="lightbox-text">Description bldfmoipsdnfg erpiogjewrigj erijg eroigjweriogjwerij wrigjweri jgwerigj wjrgiojergioj werigjrijg wjrgioj rgijwerg iojrgi ojrgi jrgoi wejrgiowerjg werigj weorigj werigj werigj weoirj g</span>
+            <span class="lightbox-counter"></span>
+        </div>
+    </div>
+    <div class="lightbox-controls">
+        <div class="prev" onclick="prev()"><</div>
+        <div class="next" onclick="next()">></div>
+    </div>
+    </div>
+
+        <script src="assets/js/script.js" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/js/paper-full.js"></script>
+</body>
+</html>
