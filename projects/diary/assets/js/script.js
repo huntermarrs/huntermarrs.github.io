@@ -82,5 +82,5 @@ function changeImage(){
 	imgSrc=portfolioItems[index].querySelector("img").getAttribute("src");
 	lightboxImage.src=imgSrc;
 	counter.innerHTML=(index+1)+" of "+ portfolioItems.length;
-	lightboxText.innerHTML=portfolioItems[index].querySelector("h2").innerHTML;
+	lightboxText.innerHTML=portfolioItems[index].querySelector(".hidden-lightbox-caption").innerHTML;
 }
