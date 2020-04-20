@@ -83,6 +83,19 @@ display: none;
 p {
 margin: 1vw;
 }
+a {
+    text-decoration: none;
+    color: white;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    transition: all .2s ease-in-out;
+}
+a:hover {
+font-family: "ApfelGrotezk-RegularBrukt";
+    color: #9cf26e;
+
+}
+
 .popupcovid {
 color: black;
     font-family: "ApfelGrotezk-RegularBrukt";
@@ -120,6 +133,7 @@ color: black;
     font-family: "ApfelGrotezk-RegularBrukt";
     font-size: 13vw;
     line-height: 15vw;
+    cursor: default;
 }
 .container {
     max-width: auto;
@@ -199,6 +213,8 @@ width: 125%;
     align-items: center;
     text-align: center;
     color: white;
+    -webkit-text-stroke-width: .2px;
+    -webkit-text-stroke-color: black;
     margin: 30px 0;
     z-index: 100;
     cursor: pointer;
@@ -215,7 +231,6 @@ width: 125%;
     background-color: rgba(226, 226, 226, 0.9);
     display: none;
     justify-content: center;
-    align-items: center;
     cursor: zoom-out;
 }
 .lightbox.open{
@@ -225,7 +240,7 @@ width: 125%;
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 600px;
+    max-height: 570px;
     padding: 40px;
     cursor: pointer;
 }
@@ -243,17 +258,22 @@ width: 125%;
     font-size: 30px;
 }
 .lightbox .lightbox-caption {
+    position: fixed;
     background-image: linear-gradient(to bottom, rgba(255,0,0,0), rgba(156, 242, 110, 1));
-    color: white;
-      font-family: "ApfelGrotezk-Regular";
-    font-size: 30px;
-    position: absolute;
+    color: black;
+    font-family: "ApfelGrotezk-Regular";
+    font-size: 27px;
+    left: 0;
+    bottom: 0vh;
+    height: 26vh;
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     display: flex;
-    text-align: center;
+    text-align: left;
+    align-items: flex-end;
+    vertical-align: text-bottom;
     justify-content: space-between;
-    z-index: -1;
+    z-index: 1;
 }
 .lightbox .lightbox-controls div {
     position: absolute;
@@ -274,6 +294,10 @@ width: 125%;
         background-color: white;
         font-family: "ApfelGrotezk-Regular";
 }
+.lightbox-counter {
+    white-space: nowrap;
+    font-size: 27px;
+}
 .lightbox .lightbox-controls div:hover {
 background-color: #9cf26e;
 }
@@ -289,11 +313,42 @@ background-color: #9cf26e;
         flex-basis: calc(50% - 10px);
         max-width: calc(50% - 10px);
     }
+    .lightbox .lightbox-caption {
+        font-size: 23px;
+        height: 33vh;
+    }
+    .lightbox-counter {
+        font-size: 15px;
+    }
+    .popuptext {
+        padding: 8vw;
+       margin-left: 1vw;
+       margin-right: 0vw;
+       margin-top: -10vh;
+       font-size: 4vw;
+}
 }
 @media (max-width:575px){
     .portfolio .portfolio-items .item{
         flex-basis: calc(100%);
         max-width: calc(100%);
-
+}
+.lightbox .lightbox-caption {
+    font-size: 20px;
+    height: 45vh;
+}
+.lightbox-counter {
+    font-size: 12px;
+}
+.lightbox .lightbox-img {
+    max-height: 475px;
+}
+.popuptext {
+padding: 6vw;
+     margin-left: 1vw;
+     margin-right: 0vw;
+     margin-top: -3vw;
+     margin-bottom: 10vh;
+     font-size: 4vw;
 }
 }

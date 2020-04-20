@@ -79,7 +79,7 @@ function lightBox(){
 	lightBoxContainer.classList.toggle("open");
 }
 function changeImage(){
-	imgSrc=portfolioItems[index].querySelector("img").getAttribute("src");
+	imgSrc=portfolioItems[index].querySelector("a").getAttribute("href");
 	lightboxImage.src=imgSrc;
 	counter.innerHTML=(index+1)+" of "+ portfolioItems.length;
 	lightboxText.innerHTML=portfolioItems[index].querySelector(".hidden-lightbox-caption").innerHTML;
