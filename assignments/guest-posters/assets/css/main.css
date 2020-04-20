@@ -220,11 +220,13 @@ top: 60vh;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    z-index: 100;
 }
 
 a {
     color: transparent;
     text-decoration-line: none;
+    z-index: 100;
 }
 
 a:hover {

@@ -193,6 +193,7 @@ top: 60vh;
     background-clip: text;
     -webkit-background-clip: text;
     color: transparent;
+    z-index: 100;
 }
 
 /* #forward {
@@ -225,6 +226,7 @@ top: 60vh;
 a {
     color: transparent;
     text-decoration-line: none;
+    
 }
 
 a:hover {
